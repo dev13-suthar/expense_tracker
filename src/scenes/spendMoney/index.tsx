@@ -18,7 +18,6 @@ const SpendMoney = () => {
     const user:UserType  = useSelector((state:RootState)=>state.global.user);
     const [amount, setamount] = useState<number | string >(0);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [error, seterror] = useState("");
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -45,9 +44,7 @@ const SpendMoney = () => {
 
 
   return (
-    <>
-    {error? <p>{error}</p>:
-    
+    <> 
     <div className="bg-red-400 mt-2">
         <header className="p-4 flex justify-center items-center relative">
             <span className="absolute left-2 text-3xl cursor-pointer" onClick={()=>navigate('/home')}>&larr;</span>
@@ -115,7 +112,6 @@ const SpendMoney = () => {
             
         </div>
     </div>
-}
     </>
   )
 }
